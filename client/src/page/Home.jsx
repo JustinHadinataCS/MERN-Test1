@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import RecipeCard from "../components/RecipeCard";
+import { useState, useEffect } from "react";
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
