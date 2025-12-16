@@ -15,12 +15,10 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log("MongoDB connection error:", err));
 
-// Routes
 const recipeRoutes = require("./routes/recipes");
 app.use("/api/recipes", recipeRoutes);
 
-// Basic route
-app.get("/", (req, res) => {
+app.get("/", (res, req) => {
   res.json({ message: "Recipe Box API" });
 });
 
