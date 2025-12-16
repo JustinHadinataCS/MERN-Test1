@@ -55,4 +55,17 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// Delete all recipes
+router.delete("/", async (req, res) => {
+  try {
+    const result = await Recipe.deleteMany({});
+    res.json({
+      message: "All recipes deleted",
+      deletedCount: result.deletedCount,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 module.exports = router;
