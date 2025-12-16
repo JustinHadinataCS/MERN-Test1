@@ -16,8 +16,8 @@ function Navbar() {
           <div className="flex gap-6">
             <Link
               to="/"
-              className={`hover:text-emerald-200 transition ${
-                isActive("/") ? "border-b-2 border-white" : ""
+              className={`hover:text-emerald-400 transition ${
+                isActive("/") ? "border-b-2 border-black" : ""
               }`}
             >
               Home
