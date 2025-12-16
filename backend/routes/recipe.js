@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Recipe = require("../models/Recipe");
 
-// Get all recipes
 router.get("/", async (req, res) => {
   try {
     const recipes = await Recipe.find().sort({ createdAt: -1 });
@@ -12,7 +11,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get single recipe by ID
 router.get("/:id", async (req, res) => {
   try {
     const recipe = await Recipe.findById(req.params.id);
@@ -25,7 +23,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Create new recipe
 router.post("/", async (req, res) => {
   const recipe = new Recipe({
     name: req.body.name,
